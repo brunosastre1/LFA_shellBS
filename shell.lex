@@ -2,16 +2,16 @@
  /********************************************************************
  * Programa: bs_shell.lex	
  * 
- * Descriçao: tokens que serao utilizados pelo .y
+ * Descriçao: tokens que serao utilizados pelo bison
  *
  * Autor:  Bruno Sastre
  *
  *********************************************************************/
 
 %{
-#include <stdio.h>
+#include <stdio.h> //cabecalho biblioteca padrao do C
 
-#define YY_DECL int yylex()
+#define YY_DECL int yylex() //yylex() eh o analisador lexico gerado pelo arquivo de definicao
 
 #include "shell.tab.h"
 
