@@ -42,6 +42,11 @@ void imprimeLinha(); //funcao que imprime a linha com nome do shell, assim como 
 %token <stringp> N_ARGM
 %token <stringp> N_PASTANAME
 
+
+%type<integer> calculo_int //calcula operacoes que retornam int
+%type<pfloat> calculo_float //calcula operacoes que retornam float
+%type<string> comando
+
 //tokens dos comandos
 %token C_LS
 C_PS 
@@ -69,9 +74,7 @@ OP_SUB
 OP_MULT 
 OP_DIV
 
-%type<string> comando
-%type<integer> calculo_int
-%type<pfloat> calculo_float
+
 
 %start inicio
 
@@ -118,18 +121,15 @@ calculo_int: N_NUMINT { $$ = $1; } //retorna o inteiro
 
 //comando pode executar um dos comandos por vez especificados abaixo
 comando: C_LS { 
-
-system("/bin/ls"); //system realiza a chamada de sistema para o ls do linux
-
+			system("/bin/ls"); //system realiza a chamada de sistema para o ls do linux
 }
-
 
 	   | C_PS { system("/bin/ps"); } //system realiza a chamada de sistema para o ps do linux
 	   | C_KILL N_NUMINT {  
 					     char stringFim[1000] = "/bin/kill ";
 					     char buffer[50];
 					     int num = $2;
-					     snprintf(buffer,stringFim,1);
+					     sprintf(buffer,stringFim,1); //corrigir
 					     strcat(stringFim, buffer);
 					     system(stringFim);
 	   				 }		 

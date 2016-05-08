@@ -465,9 +465,9 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    83,    83,    84,    88,    89,    90,    91,    92,    96,
-      97,    98,    99,   100,   101,   102,   103,   104,   105,   106,
-     107,   108,   109,   112,   113,   114,   115,   120,   127,   128,
+       0,    86,    86,    87,    91,    92,    93,    94,    95,    99,
+     100,   101,   102,   103,   104,   105,   106,   107,   108,   109,
+     110,   111,   112,   115,   116,   117,   118,   123,   127,   128,
      136,   141,   148,   154,   165,   170,   171,   177,   178
 };
 #endif
@@ -1270,157 +1270,155 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 83 "shell.y" /* yacc.c:1646  */
+#line 86 "shell.y" /* yacc.c:1646  */
     { imprimeLinha(); }
 #line 1276 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 84 "shell.y" /* yacc.c:1646  */
+#line 87 "shell.y" /* yacc.c:1646  */
     {imprimeLinha();}
 #line 1282 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 90 "shell.y" /* yacc.c:1646  */
+#line 93 "shell.y" /* yacc.c:1646  */
     {printf("%i\n", (yyvsp[-1].integer));}
 #line 1288 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 91 "shell.y" /* yacc.c:1646  */
+#line 94 "shell.y" /* yacc.c:1646  */
     {printf("%f\n", (yyvsp[-1].pfloat));}
 #line 1294 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 92 "shell.y" /* yacc.c:1646  */
+#line 95 "shell.y" /* yacc.c:1646  */
     { printf("ShellBS finalizado.\n"); exit(0); }
 #line 1300 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 96 "shell.y" /* yacc.c:1646  */
+#line 99 "shell.y" /* yacc.c:1646  */
     { (yyval.pfloat) = (yyvsp[0].pfloat); }
 #line 1306 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 97 "shell.y" /* yacc.c:1646  */
+#line 100 "shell.y" /* yacc.c:1646  */
     { (yyval.pfloat) = (yyvsp[-2].integer) / (float)(yyvsp[0].integer); }
 #line 1312 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 98 "shell.y" /* yacc.c:1646  */
+#line 101 "shell.y" /* yacc.c:1646  */
     { (yyval.pfloat) = (yyvsp[-2].pfloat) / (yyvsp[0].pfloat); }
 #line 1318 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 99 "shell.y" /* yacc.c:1646  */
+#line 102 "shell.y" /* yacc.c:1646  */
     { (yyval.pfloat) = (yyvsp[-2].integer) + (yyvsp[0].pfloat); }
 #line 1324 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 100 "shell.y" /* yacc.c:1646  */
+#line 103 "shell.y" /* yacc.c:1646  */
     { (yyval.pfloat) = (yyvsp[-2].integer) - (yyvsp[0].pfloat); }
 #line 1330 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 101 "shell.y" /* yacc.c:1646  */
+#line 104 "shell.y" /* yacc.c:1646  */
     { (yyval.pfloat) = (yyvsp[-2].integer) * (yyvsp[0].pfloat); }
 #line 1336 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 102 "shell.y" /* yacc.c:1646  */
+#line 105 "shell.y" /* yacc.c:1646  */
     { (yyval.pfloat) = (yyvsp[-2].integer) / (yyvsp[0].pfloat); }
 #line 1342 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 103 "shell.y" /* yacc.c:1646  */
+#line 106 "shell.y" /* yacc.c:1646  */
     { (yyval.pfloat) = (yyvsp[-2].pfloat) + (yyvsp[0].pfloat); }
 #line 1348 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 104 "shell.y" /* yacc.c:1646  */
+#line 107 "shell.y" /* yacc.c:1646  */
     { (yyval.pfloat) = (yyvsp[-2].pfloat) - (yyvsp[0].pfloat); }
 #line 1354 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 105 "shell.y" /* yacc.c:1646  */
+#line 108 "shell.y" /* yacc.c:1646  */
     { (yyval.pfloat) = (yyvsp[-2].pfloat) * (yyvsp[0].pfloat); }
 #line 1360 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 19:
-#line 106 "shell.y" /* yacc.c:1646  */
+#line 109 "shell.y" /* yacc.c:1646  */
     { (yyval.pfloat) = (yyvsp[-2].pfloat) + (yyvsp[0].integer); }
 #line 1366 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 107 "shell.y" /* yacc.c:1646  */
+#line 110 "shell.y" /* yacc.c:1646  */
     { (yyval.pfloat) = (yyvsp[-2].pfloat) - (yyvsp[0].integer); }
 #line 1372 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 21:
-#line 108 "shell.y" /* yacc.c:1646  */
+#line 111 "shell.y" /* yacc.c:1646  */
     { (yyval.pfloat) = (yyvsp[-2].pfloat) * (yyvsp[0].integer); }
 #line 1378 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 22:
-#line 109 "shell.y" /* yacc.c:1646  */
+#line 112 "shell.y" /* yacc.c:1646  */
     { (yyval.pfloat) = (yyvsp[-2].pfloat) / (yyvsp[0].integer);}
 #line 1384 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 23:
-#line 112 "shell.y" /* yacc.c:1646  */
+#line 115 "shell.y" /* yacc.c:1646  */
     { (yyval.integer) = (yyvsp[0].integer); }
 #line 1390 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 24:
-#line 113 "shell.y" /* yacc.c:1646  */
+#line 116 "shell.y" /* yacc.c:1646  */
     { (yyval.integer) = (yyvsp[-2].integer) + (yyvsp[0].integer); }
 #line 1396 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 25:
-#line 114 "shell.y" /* yacc.c:1646  */
+#line 117 "shell.y" /* yacc.c:1646  */
     { (yyval.integer) = (yyvsp[-2].integer) - (yyvsp[0].integer); }
 #line 1402 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 26:
-#line 115 "shell.y" /* yacc.c:1646  */
+#line 118 "shell.y" /* yacc.c:1646  */
     { (yyval.integer) = (yyvsp[-2].integer) * (yyvsp[0].integer); }
 #line 1408 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 27:
-#line 120 "shell.y" /* yacc.c:1646  */
+#line 123 "shell.y" /* yacc.c:1646  */
     { 
-
-system("/bin/ls"); //system realiza a chamada de sistema para o ls do linux
-
+			system("/bin/ls"); //system realiza a chamada de sistema para o ls do linux
 }
-#line 1418 "shell.tab.c" /* yacc.c:1646  */
+#line 1416 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 28:
 #line 127 "shell.y" /* yacc.c:1646  */
     { system("/bin/ps"); }
-#line 1424 "shell.tab.c" /* yacc.c:1646  */
+#line 1422 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 29:
@@ -1429,11 +1427,11 @@ system("/bin/ls"); //system realiza a chamada de sistema para o ls do linux
 					     char stringFim[1000] = "/bin/kill ";
 					     char buffer[50];
 					     int num = (yyvsp[0].integer);
-					     snprintf(buffer,stringFim,1);
+					     sprintf(buffer,stringFim,1); //corrigir
 					     strcat(stringFim, buffer);
 					     system(stringFim);
 	   				 }
-#line 1437 "shell.tab.c" /* yacc.c:1646  */
+#line 1435 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 30:
@@ -1443,7 +1441,7 @@ system("/bin/ls"); //system realiza a chamada de sistema para o ls do linux
 	   					 strcat(stringFim, (yyvsp[0].stringp));//concatena a instruçao para a chamada de sistema com o argumento
 	   					 system(stringFim); //realiza a chamada de sistema
 	   				   }
-#line 1447 "shell.tab.c" /* yacc.c:1646  */
+#line 1445 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 31:
@@ -1453,7 +1451,7 @@ system("/bin/ls"); //system realiza a chamada de sistema para o ls do linux
 	   					 strcat(stringFim, (yyvsp[0].stringp));//concatena a instruçao para a chamada de sistema com o argumento
 	   					 system(stringFim);//realiza a chamada de sistema
 	   				   }
-#line 1457 "shell.tab.c" /* yacc.c:1646  */
+#line 1455 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 32:
@@ -1464,7 +1462,7 @@ system("/bin/ls"); //system realiza a chamada de sistema para o ls do linux
 						   		printf("Erro! Diretorio nao encontrado!\n");
 						   	}
 						  }
-#line 1468 "shell.tab.c" /* yacc.c:1646  */
+#line 1466 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 33:
@@ -1480,7 +1478,7 @@ system("/bin/ls"); //system realiza a chamada de sistema para o ls do linux
 							printf("Erro: diretorio nao encontrado! Verifique o caminho e tente novamente. \n");
 						}
 					}
-#line 1484 "shell.tab.c" /* yacc.c:1646  */
+#line 1482 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 34:
@@ -1490,13 +1488,13 @@ system("/bin/ls"); //system realiza a chamada de sistema para o ls do linux
 						  strcat(stringFim, (yyvsp[0].stringp));//concatena a instruçao para a chamada de sistema com o argumento
 						  system(stringFim);//realiza a chamada de sistema
 						}
-#line 1494 "shell.tab.c" /* yacc.c:1646  */
+#line 1492 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 35:
 #line 170 "shell.y" /* yacc.c:1646  */
     {system("ifconfig");}
-#line 1500 "shell.tab.c" /* yacc.c:1646  */
+#line 1498 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 36:
@@ -1507,23 +1505,23 @@ system("/bin/ls"); //system realiza a chamada de sistema para o ls do linux
 								exit(0);
 							} 
 						}
-#line 1511 "shell.tab.c" /* yacc.c:1646  */
+#line 1509 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 37:
 #line 177 "shell.y" /* yacc.c:1646  */
     { yyerror("Argumento encontrado sem comando associado"); }
-#line 1517 "shell.tab.c" /* yacc.c:1646  */
+#line 1515 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 38:
 #line 178 "shell.y" /* yacc.c:1646  */
     { yyerror("Argumento invalido"); }
-#line 1523 "shell.tab.c" /* yacc.c:1646  */
+#line 1521 "shell.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1527 "shell.tab.c" /* yacc.c:1646  */
+#line 1525 "shell.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
