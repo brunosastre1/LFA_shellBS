@@ -24,7 +24,6 @@ extern FILE* yyin;
 
 void yyerror(const char* s);
 void imprimir_logo(FILE *fptr); //imprime logo do shell
-
 void imprimeLinha(); //funcao que imprime a linha com nome do shell, assim como o caminho das pastas etc
 %}
 
@@ -134,16 +133,20 @@ comando: C_LS {
 
 	   | C_PS { system("/bin/ps"); } //system realiza a chamada de sistema para o ps do linux
 	   | C_KILL N_NUMINT {  
-					     char stringFim[1000] = "/bin/kill ";
-					     char buffer[50];
+	   					 //nao consegui converter int para string usando sprintf
+					     /*char stringFim[] = "/bin/kill ";
+					     char buffer[FILENAME_MAX];
 					     int num = $2;
-					     sprintf(buffer,stringFim,1); //corrigir
-					     strcat(stringFim, buffer);
-					     system(stringFim);
+					    	
+					     sprintf(buffer, "%s%d", stringFim, num); //corrigir
+					   
+						 system(stringFim);*/ 
+
+					     
 	   				 }		 
 	   | C_MKDIR N_ARGM {
 	   					 char stringFim[1000] = "/bin/mkdir ";
-	   					 strcat(stringFim, $2);//concatena a instruçao para a chamada de sistema com o argumento
+	   					 strcat(stringFim, $2);//concatena a instruçao para a chamada de sistema com o argumentotus
 	   					 system(stringFim); //realiza a chamada de sistema
 	   				   }
 	   | C_RMDIR N_ARGM {
