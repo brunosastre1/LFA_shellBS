@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#define TAM_MAXIMO 128
 
 extern int yylex();
 extern int yyparse();
@@ -22,6 +23,7 @@ extern FILE* yyin;
 
 
 void yyerror(const char* s);
+void imprimir_logo(FILE *fptr); //imprime logo do shell
 
 void imprimeLinha(); //funcao que imprime a linha com nome do shell, assim como o caminho das pastas etc
 %}
@@ -68,9 +70,15 @@ OP_SUB
 OP_MULT 
 OP_DIV
 
+
+//Correçao para precedencia das operacoes
 %left 
 OP_SOMA 
 OP_SUB 
+
+
+//Correcao para precedencia das operacoes
+%left
 OP_MULT 
 OP_DIV
 
@@ -183,8 +191,21 @@ comando: C_LS {
 %%
 
 int main() {
+    
+    char *filename = "image.txt";
+    FILE *fptr = NULL;
+ 
+    if((fptr = fopen(filename,"r")) == NULL)
+    {
+        fprintf(stderr,"error opening %s\n",filename);
+        return 1;
+    }
+ 
+    imprimir_logo(fptr);
+ 
+    fclose(fptr);
 	yyin = stdin;
-
+	
 	do { 
 		yyparse();
 	} while(!feof(yyin));
@@ -193,7 +214,7 @@ int main() {
 }
 
 void yyerror(const char* s) { //funcao que retorna mensagem de erro caso algo alguma entrada seja invalida
-	fprintf(stderr, "Argumento ou comando invalido. Erro: %s\n", s);
+	fprintf(stderr, "Argumento ou comando invalido. Msg Erro: %s\n", s);
 }
 
 
@@ -214,4 +235,13 @@ void imprimeLinha(){
 	strcat(nomeShell,">> ");
 
 	printf("%s",nomeShell); 
+}
+
+
+	void imprimir_logo(FILE *fptr)
+{
+    char read_string[TAM_MAXIMO];
+ 
+    while(fgets(read_string,sizeof(read_string),fptr) != NULL)
+        printf("%s",read_string);
 }

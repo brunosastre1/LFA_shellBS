@@ -1,0 +1,9 @@
+  ___ _        _ _ ___ ___ 
+ / __| |_  ___| | | _ ) __|
+ \__ \ ' \/ -_) | | _ \__ \
+ |___/_||_\___|_|_|___/___/
+                           
+
+ShellBS [Version 1.0]
+Cporyright (c) 2016 Bruno Sastre. All rights reserved.
+
