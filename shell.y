@@ -91,7 +91,10 @@ OP_DIV
 
 //impressao da linha no começo, antes dos comandos
 inicio: { imprimeLinha(); }
-	   | inicio line {imprimeLinha();}
+	   | inicio line {
+	   					printf("\n");
+	   					imprimeLinha();
+	   				 }
 ;
 
 //C_NOVALINHA pula a linha (\n), comando executa os comandos(LS,PS...), calculo_int recebe os valores e realiza operacoes com numeros inteiros, calculo_float realiza operacoes com numeros c casas decimais  
