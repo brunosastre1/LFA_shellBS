@@ -1767,7 +1767,7 @@ int main() {
  
     if((fptr = fopen(filename,"r")) == NULL)
     {
-        fprintf(stderr,"error opening %s\n",filename);
+        fprintf(stderr,"erro ao abrir %s\n",filename);
         return 1;
     }
  
