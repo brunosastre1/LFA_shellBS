@@ -1425,14 +1425,14 @@ yyreduce:
   case 29:
 #line 135 "shell.y" /* yacc.c:1646  */
     {  
-	   					 //nao consegui converter int para string usando sprintf
+	   					 
 					     char stringFim[] = "/bin/kill ";
 					     char buffer[FILENAME_MAX];
 					     int num = (yyvsp[0].integer);
 					    	
-					     sprintf(buffer, "%d", num); //corrigir
+					     sprintf(buffer, "%d", num); //transforma int para string
 					   		
-					 	printf("%s", strcat(stringFim,buffer));
+					 
 						 system(strcat(stringFim,buffer));
 
 					     
