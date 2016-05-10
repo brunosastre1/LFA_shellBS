@@ -892,11 +892,11 @@ YY_RULE_SETUP
 case 20:
 YY_RULE_SETUP
 #line 46 "shell.lex"
-{yylval.stringp = yytext; return N_PASTANAME; }//cadeias aceitas para nomes de pasta
+{yylval.stringp = yytext; return N_PASTANAME; }//cadeias aceitas para nomes de pasta.
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 48 "shell.lex"
+#line 49 "shell.lex"
 ECHO;
 	YY_BREAK
 #line 903 "lex.yy.c"
@@ -1894,6 +1894,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 47 "shell.lex"
+#line 48 "shell.lex"
 
 

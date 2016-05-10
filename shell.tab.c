@@ -469,7 +469,7 @@ static const yytype_uint8 yyrline[] =
        0,    93,    93,    94,    98,    99,   100,   101,   102,   106,
      107,   108,   109,   110,   111,   112,   113,   114,   115,   116,
      117,   118,   119,   122,   123,   124,   125,   130,   134,   135,
-     145,   150,   157,   163,   174,   179,   180,   186,   187
+     148,   155,   162,   168,   179,   184,   185,   191,   192
 };
 #endif
 
@@ -1425,51 +1425,56 @@ yyreduce:
   case 29:
 #line 135 "shell.y" /* yacc.c:1646  */
     {  
+	   					 //nao consegui converter int para string usando sprintf
 					     char stringFim[] = "/bin/kill ";
 					     char buffer[FILENAME_MAX];
 					     int num = (yyvsp[0].integer);
 					    	
-					     sprintf(buffer, "%s%d", stringFim, num); //corrigir
-					     printf("%s", stringFim);
-						 system(stringFim);
+					     sprintf(buffer, "%d", num); //corrigir
+					   		
+					 	printf("%s", strcat(stringFim,buffer));
+						 system(strcat(stringFim,buffer));
+
 					     
 	   				 }
-#line 1438 "shell.tab.c" /* yacc.c:1646  */
+#line 1441 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 30:
-#line 145 "shell.y" /* yacc.c:1646  */
+#line 148 "shell.y" /* yacc.c:1646  */
     {
 	   					 char stringFim[1000] = "/bin/mkdir ";
-	   					 strcat(stringFim, (yyvsp[0].stringp));//concatena a instruçao para a chamada de sistema com o argumento
+	   					 strcat(stringFim, (yyvsp[0].stringp));//concatena a instruçao para a chamada de sistema com o argumentotus
 	   					 system(stringFim); //realiza a chamada de sistema
+	   				   
+
 	   				   }
-#line 1448 "shell.tab.c" /* yacc.c:1646  */
+#line 1453 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 31:
-#line 150 "shell.y" /* yacc.c:1646  */
+#line 155 "shell.y" /* yacc.c:1646  */
     {
 	   					 char stringFim[1000] = "/bin/rmdir ";
 	   					 strcat(stringFim, (yyvsp[0].stringp));//concatena a instruçao para a chamada de sistema com o argumento
 	   					 system(stringFim);//realiza a chamada de sistema
 	   				   }
-#line 1458 "shell.tab.c" /* yacc.c:1646  */
+#line 1463 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 32:
-#line 157 "shell.y" /* yacc.c:1646  */
+#line 162 "shell.y" /* yacc.c:1646  */
     {
 						   	int ret = chdir((yyvsp[0].stringp));
 						   	if(ret != 0){
 						   		printf("Erro! Diretorio nao encontrado!\n");
 						   	}
 						  }
-#line 1469 "shell.tab.c" /* yacc.c:1646  */
+#line 1474 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 33:
-#line 163 "shell.y" /* yacc.c:1646  */
+#line 168 "shell.y" /* yacc.c:1646  */
     {		
 	   					int ret;
 	   					char caminho[2048];
@@ -1481,50 +1486,50 @@ yyreduce:
 							printf("Erro: diretorio nao encontrado! Verifique o caminho e tente novamente. \n");
 						}
 					}
-#line 1485 "shell.tab.c" /* yacc.c:1646  */
+#line 1490 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 34:
-#line 174 "shell.y" /* yacc.c:1646  */
+#line 179 "shell.y" /* yacc.c:1646  */
     {
 						  char stringFim[1000] = "/bin/touch ";
 						  strcat(stringFim, (yyvsp[0].stringp));//concatena a instruçao para a chamada de sistema com o argumento
 						  system(stringFim);//realiza a chamada de sistema
 						}
-#line 1495 "shell.tab.c" /* yacc.c:1646  */
+#line 1500 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 35:
-#line 179 "shell.y" /* yacc.c:1646  */
+#line 184 "shell.y" /* yacc.c:1646  */
     {system("ifconfig");}
-#line 1501 "shell.tab.c" /* yacc.c:1646  */
+#line 1506 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 36:
-#line 180 "shell.y" /* yacc.c:1646  */
+#line 185 "shell.y" /* yacc.c:1646  */
     { 
 							if(fork() == 0){
 								system((yyvsp[0].stringp));
 								exit(0);
 							} 
 						}
-#line 1512 "shell.tab.c" /* yacc.c:1646  */
+#line 1517 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 37:
-#line 186 "shell.y" /* yacc.c:1646  */
+#line 191 "shell.y" /* yacc.c:1646  */
     { yyerror("Argumento encontrado sem comando associado"); }
-#line 1518 "shell.tab.c" /* yacc.c:1646  */
+#line 1523 "shell.tab.c" /* yacc.c:1646  */
     break;
 
   case 38:
-#line 187 "shell.y" /* yacc.c:1646  */
+#line 192 "shell.y" /* yacc.c:1646  */
     { yyerror("Argumento invalido"); }
-#line 1524 "shell.tab.c" /* yacc.c:1646  */
+#line 1529 "shell.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1528 "shell.tab.c" /* yacc.c:1646  */
+#line 1533 "shell.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1752,7 +1757,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 192 "shell.y" /* yacc.c:1906  */
+#line 197 "shell.y" /* yacc.c:1906  */
 
 
 int main() {

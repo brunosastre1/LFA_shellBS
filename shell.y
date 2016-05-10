@@ -133,14 +133,15 @@ comando: C_LS {
 
 	   | C_PS { system("/bin/ps"); } //system realiza a chamada de sistema para o ps do linux
 	   | C_KILL N_NUMINT {  
-	   					 //nao consegui converter int para string usando sprintf
-					     /*char stringFim[] = "/bin/kill ";
+	   					 
+					     char stringFim[] = "/bin/kill ";
 					     char buffer[FILENAME_MAX];
 					     int num = $2;
 					    	
-					     sprintf(buffer, "%s%d", stringFim, num); //corrigir
-					   
-						 system(stringFim);*/ 
+					     sprintf(buffer, "%d", num); //transforma int para string
+					   		
+					 
+						 system(strcat(stringFim,buffer));
 
 					     
 	   				 }		 
@@ -148,6 +149,8 @@ comando: C_LS {
 	   					 char stringFim[1000] = "/bin/mkdir ";
 	   					 strcat(stringFim, $2);//concatena a instruçao para a chamada de sistema com o argumentotus
 	   					 system(stringFim); //realiza a chamada de sistema
+	   				   
+
 	   				   }
 	   | C_RMDIR N_ARGM {
 	   					 char stringFim[1000] = "/bin/rmdir ";

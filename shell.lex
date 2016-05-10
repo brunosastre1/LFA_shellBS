@@ -43,6 +43,7 @@
 
 [a-zA-Z0-9./\()_-]+[.]?[a-zA-Z0-9]* {yylval.stringp = yytext; return N_ARGM; }///identificar cadeias com alfanumericos
 
-[a-zA-Z0-9/.~]+ 	{yylval.stringp = yytext; return N_PASTANAME; }//cadeias aceitas para nomes de pasta
+[0-9a-zA-Z0-9/.~]+ 	{yylval.stringp = yytext; return N_PASTANAME; }//cadeias aceitas para nomes de pasta.
+
 
 %%
