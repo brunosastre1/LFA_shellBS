@@ -198,13 +198,26 @@ comando: C_LS {
 	   					int ret;
 	   					char caminho[2048];
 	   					getcwd(caminho, sizeof(caminho));
-	   					strcat(caminho, "/");
-	   					strcat(caminho, $2);
-						ret = chdir(caminho);
+	   					strcat(caminho, "/"); //concatena caminho com a barra
+	   					strcat(caminho, $2); //concatena com o argumento
+						ret = chdir(caminho); 
 						if(ret != 0){
 							printf("Erro: diretorio nao encontrado! Verifique o caminho e tente novamente. \n");
 						}
 					}
+		| C_CD N_NUMINT {
+
+			 
+	   					 char buffer[FILENAME_MAX];
+	   					 int num = $2;
+					     sprintf(buffer, "%d", num); //transforma int para string
+
+						
+						   	int ret = chdir(buffer);
+						   	if(ret != 0){
+						   		printf("Erro! Diretorio nao encontrado!\n");
+						   	}
+						  }
 
 
 		| C_TOUCH N_ARGM {
