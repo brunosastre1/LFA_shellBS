@@ -21,7 +21,7 @@
 
 %% 
 
-\n		{return C_NOVALINHA;} //pula a linha
+\n		{return C_NOVALINHA;} //fim linha
 "ls"		{return C_LS;} //lista o conteudo do diretorio atual
 "ps"		{return C_PS;} //lista todos os processos do usuario
 "kill"		{return C_KILL;} //elimina o processo com determinado numero id

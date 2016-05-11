@@ -151,16 +151,42 @@ comando: C_LS {
 	   | C_MKDIR N_ARGM {
 	   					 char stringFim[1000] = "/bin/mkdir ";
 	   					 strcat(stringFim, $2);//concatena a instruçao para a chamada de sistema com o argumentotus
-	   					 system(stringFim); //realiza a chamada de sistema
+    					 system(stringFim); //realiza a chamada de sistema
 	   				   
 
 	   				   }
+	   				   //criado para casos onde a pasta eh somente numerico
+	   	| C_MKDIR N_NUMINT{
+	   					 char stringFim[1000] = "/bin/mkdir ";
+	   					 char buffer[FILENAME_MAX];
+	   					 int num = $2;
+
+	   					 
+					     sprintf(buffer, "%d", num); //transforma int para string
+	   					system(strcat(stringFim,buffer));
+	   				   
+
+	   				   }	   
 	   | C_RMDIR N_ARGM {
 	   					 char stringFim[1000] = "/bin/rmdir ";
 	   					 strcat(stringFim, $2);//concatena a instruçao para a chamada de sistema com o argumento
 	   					 system(stringFim);//realiza a chamada de sistema
 	   				   }
 	  
+
+
+	  	   				   //criado para casos onde a pasta eh somente numerico
+	   	| C_RMDIR N_NUMINT{
+	   					 char stringFim[1000] = "/bin/rmdir ";
+	   					 char buffer[FILENAME_MAX];
+	   					 int num = $2;
+
+	   					 
+					     sprintf(buffer, "%d", num); //transforma int para string
+	   					system(strcat(stringFim,buffer));
+	   				   
+
+	   				   }
 	   /*******CD pode conter a sintaxe de N_PASTANAME ou N_ARG ************/				   
 	   | C_CD N_PASTANAME {
 						   	int ret = chdir($2);
@@ -179,11 +205,26 @@ comando: C_LS {
 							printf("Erro: diretorio nao encontrado! Verifique o caminho e tente novamente. \n");
 						}
 					}
+
+
 		| C_TOUCH N_ARGM {
 						  char stringFim[1000] = "/bin/touch ";
 						  strcat(stringFim, $2);//concatena a instruçao para a chamada de sistema com o argumento
 						  system(stringFim);//realiza a chamada de sistema
 						}
+
+							   //criado para casos onde a pasta eh somente numerico
+	   	| C_TOUCH N_NUMINT{
+	   					 char stringFim[1000] = "/bin/touch ";
+	   					 char buffer[FILENAME_MAX];
+	   					 int num = $2;
+
+	   					 
+					     sprintf(buffer, "%d", num); //transforma int para string
+	   					system(strcat(stringFim,buffer));
+	   				   
+
+	   				   }
 		| C_IFCONFIG {system("ifconfig");} //realiza a chamada de sistema
 		| C_START N_ARGM { 
 							if(fork() == 0){

@@ -798,7 +798,7 @@ case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
 #line 24 "shell.lex"
-{return C_NOVALINHA;} //pula a linha
+{return C_NOVALINHA;} //fim linha
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
